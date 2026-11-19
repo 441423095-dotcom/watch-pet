@@ -33,12 +33,26 @@
 
 ## 分享
 
-现在它只是本地文件，还没有网址，所以还不能发到 iMessage——iMessage 分享的是**链接**，需要先把它放到公开的静态托管上：
+仓库地址：<https://github.com/441423095-dotcom/watch-pet>
 
-- **GitHub Pages**：把仓库设为公开，在仓库的 Settings → Pages 里选 `main` 分支的根目录，稍等一会儿得到 `https://用户名.github.io/仓库名/`。
-- **Netlify Drop / Vercel**：把整个文件夹拖进网页上传，立刻得到网址，不需要 GitHub 账号也能开始。
+### 第一次：开启网页托管（只需做一次）
 
-拿到网址后，在 iPhone 的 Safari 里打开 → 分享 → 信息，就能发给朋友；对方点开就能玩。注意手表上点开链接只会走极简的网页预览窗口，功能受限，存档（`localStorage`）不一定能保留。
+1. 打开 <https://github.com/441423095-dotcom/watch-pet/settings/pages>
+2. **Source** 选 `Deploy from a branch`
+3. **Branch** 选 `main`，目录选 `/ (root)`，点 **Save**
+4. 等 1～2 分钟，网址就是 <https://441423095-dotcom.github.io/watch-pet/>
+
+### 发到 iMessage
+
+1. 在 iPhone 的 Safari 里打开上面那个 `github.io` 网址，等小宠出现
+2. 点底部的**分享**按钮（方框加向上箭头）
+3. 选**信息**，挑联系人，发送
+
+想当成 App 用，就在分享菜单里选「添加到主屏幕」。
+
+### 在手表上玩
+
+用信息把链接发给自己，在手表的「信息」里点开那条链接，watchOS 会用精简的网页预览窗口打开它。功能有限（存档不一定保留），但能看、能点。
 
 ## 文件
 
