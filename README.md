@@ -35,12 +35,15 @@
 
 仓库地址：<https://github.com/441423095-dotcom/watch-pet>
 
-### 第一次：开启网页托管（只需做一次）
+### 网页托管
 
-1. 打开 <https://github.com/441423095-dotcom/watch-pet/settings/pages>
-2. **Source** 选 `Deploy from a branch`
-3. **Branch** 选 `main`，目录选 `/ (root)`，点 **Save**
-4. 等 1～2 分钟，网址就是 <https://441423095-dotcom.github.io/watch-pet/>
+仓库里带了 `.github/workflows/pages.yml`，每次推送到 `main` 都会自动把页面部署到：
+
+<https://441423095-dotcom.github.io/watch-pet/>
+
+如果第一次部署报权限错误（`Resource not accessible by integration`），打开
+<https://github.com/441423095-dotcom/watch-pet/settings/pages>
+把 **Source** 选成 `GitHub Actions` 保存，再到 Actions 页面点一次 **Re-run jobs** 就好。
 
 ### 发到 iMessage
 
