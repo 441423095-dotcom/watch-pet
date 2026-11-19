@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no" />
+<meta name="theme-color" content="#000000" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<title>手表小宠</title>
+<meta name="description" content="一只住在手表表盘里的桌面小宠，喂食、玩耍、洗澡、睡觉，陪它慢慢长大。" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="手表小宠" />
+<meta property="og:description" content="一只住在手表表盘里的桌面小宠，喂食、玩耍、洗澡、睡觉，陪它慢慢长大。" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="stage">
+  <!-- 396 × 484：Apple Watch 45mm 的点阵尺寸，整页按手表屏幕比例排版 -->
+  <div class="device" id="device">
+    <span class="crown" aria-hidden="true"></span>
+    <div class="screen" id="screen">
+
+      <div class="bg" aria-hidden="true">
+        <span class="blob blob-a"></span>
+        <span class="blob blob-b"></span>
+        <span class="blob blob-c"></span>
+        <span class="stars"></span>
+      </div>
+
+      <header class="topbar">
+        <span class="date" id="clockDate">&nbsp;</span>
+        <span class="time" id="clockTime">--:--</span>
+      </header>
+
+      <section class="pet-area">
+        <div class="orb">
+          <svg class="rings" viewBox="0 0 240 240" aria-hidden="true">
+            <defs>
+              <linearGradient id="gHunger" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#FFE0AE" />
+                <stop offset="100%" stop-color="#FF8F2E" />
+              </linearGradient>
+              <linearGradient id="gMood" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#FFC2D6" />
+                <stop offset="100%" stop-color="#FF4E8F" />
+              </linearGradient>
+              <linearGradient id="gEnergy" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#B6EBFF" />
+                <stop offset="100%" stop-color="#2E9BFF" />
+              </linearGradient>
+              <linearGradient id="gClean" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#C6F8E4" />
+                <stop offset="100%" stop-color="#2BC495" />
+              </linearGradient>
+            </defs>
+            <g class="ring-track">
+              <circle cx="120" cy="120" r="116" />
+              <circle cx="120" cy="120" r="101" />
+              <circle cx="120" cy="120" r="86" />
+              <circle cx="120" cy="120" r="71" />
+            </g>
+            <g class="ring-fill" transform="rotate(-90 120 120)">
+              <circle id="ringHunger" cx="120" cy="120" r="116" stroke="url(#gHunger)" />
+              <circle id="ringMood" cx="120" cy="120" r="101" stroke="url(#gMood)" />
+              <circle id="ringEnergy" cx="120" cy="120" r="86" stroke="url(#gEnergy)" />
+              <circle id="ringClean" cx="120" cy="120" r="71" stroke="url(#gClean)" />
+            </g>
+          </svg>
+
+          <div class="halo" aria-hidden="true"></div>
+
+          <div class="pet-wrap" id="petWrap">
+            <div class="zzz" aria-hidden="true"><span>Z</span><span>z</span><span>z</span></div>
+            <svg class="pet" viewBox="0 0 120 120" aria-hidden="true">
+              <defs>
+                <radialGradient id="bodyGrad" cx="34%" cy="24%" r="86%">
+                  <stop offset="0%" stop-color="#FFF1DA" />
+                  <stop offset="48%" stop-color="#FFCF97" />
+                  <stop offset="100%" stop-color="#EF9A4F" />
+                </radialGradient>
+                <linearGradient id="crownGrad" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#FFF2BC" />
+                  <stop offset="100%" stop-color="#E5B437" />
+                </linearGradient>
+                <radialGradient id="groundGrad">
+                  <stop offset="0%" stop-color="#000000" stop-opacity=".38" />
+                  <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+                </radialGradient>
+              </defs>
+
+              <ellipse class="ground" cx="60" cy="113" rx="30" ry="5.5" fill="url(#groundGrad)" />
+
+              <path class="tail" d="M94 84 q16 1 13 -15" fill="none" stroke="#EF9A4F" stroke-width="7" stroke-linecap="round" />
+
+              <g class="ear ear-l">
+                <circle cx="38" cy="44" r="12" fill="url(#bodyGrad)" />
+                <circle cx="38" cy="45.5" r="6.4" fill="#FFB3C1" opacity=".8" />
+              </g>
+              <g class="ear ear-r">
+                <circle cx="82" cy="44" r="12" fill="url(#bodyGrad)" />
+                <circle cx="82" cy="45.5" r="6.4" fill="#FFB3C1" opacity=".8" />
+              </g>
+
+              <path class="tuft" d="M60 37 q1 -12 10 -14 q-6 6 -3 14 z" fill="#FFDCAE" />
+              <g class="crown">
+                <path d="M49 33 l0 -9 l6 5 l5 -8 l5 8 l6 -5 l0 9 z" fill="url(#crownGrad)" stroke="#D9A62F" stroke-width="1.2" stroke-linejoin="round" />
+                <circle class="gem" cx="60" cy="28.5" r="1.7" fill="#FFFBEA" />
+              </g>
+
+              <ellipse cx="60" cy="70" rx="36" ry="33" fill="url(#bodyGrad)" />
+              <ellipse cx="60" cy="83" rx="21" ry="17" fill="#FFF3E0" opacity=".5" />
+
+              <ellipse class="arm arm-l" cx="24" cy="74" rx="9" ry="11" fill="#FFCB8F" />
+              <ellipse class="arm arm-r" cx="96" cy="74" rx="9" ry="11" fill="#FFCB8F" />
+
+              <ellipse cx="46" cy="101" rx="11" ry="6.4" fill="#EF9A4F" />
+              <ellipse cx="74" cy="101" rx="11" ry="6.4" fill="#EF9A4F" />
+
+              <ellipse cx="36" cy="78" rx="7.4" ry="4.8" fill="#FF8FA8" opacity=".5" />
+              <ellipse cx="84" cy="78" rx="7.4" ry="4.8" fill="#FF8FA8" opacity=".5" />
+
+              <g class="eyes-open">
+                <g class="eye">
+                  <ellipse cx="47" cy="66" rx="6.2" ry="7.6" fill="#3A3145" />
+                  <circle cx="49.2" cy="62.6" r="2.2" fill="#FFFFFF" opacity=".95" />
+                  <circle cx="45" cy="69" r="1.1" fill="#FFFFFF" opacity=".6" />
+                </g>
+                <g class="eye">
+                  <ellipse cx="73" cy="66" rx="6.2" ry="7.6" fill="#3A3145" />
+                  <circle cx="75.2" cy="62.6" r="2.2" fill="#FFFFFF" opacity=".95" />
+                  <circle cx="71" cy="69" r="1.1" fill="#FFFFFF" opacity=".6" />
+                </g>
+              </g>
+
+              <g class="eyes-closed">
+                <path d="M41 66 q6 7 12 0" fill="none" stroke="#3A3145" stroke-width="3.2" stroke-linecap="round" />
+                <path d="M67 66 q6 7 12 0" fill="none" stroke="#3A3145" stroke-width="3.2" stroke-linecap="round" />
+              </g>
+
+              <path class="mouth" id="mouth" d="M52 81 q8 6 16 0" fill="none" stroke="#3A3145" stroke-width="3" stroke-linecap="round" />
+            </svg>
+          </div>
+
+          <div class="bubble" id="bubble" role="status"></div>
+          <div class="fx" id="fx" aria-hidden="true"></div>
+        </div>
+      </section>
+
+      <section class="stats">
+        <div class="stat">
+          <span class="stat-name"><i class="dot dot-hunger"></i>饱食</span>
+          <b id="valHunger">100</b>
+        </div>
+        <div class="stat">
+          <span class="stat-name"><i class="dot dot-mood"></i>心情</span>
+          <b id="valMood">100</b>
+        </div>
+        <div class="stat">
+          <span class="stat-name"><i class="dot dot-energy"></i>精力</span>
+          <b id="valEnergy">100</b>
+        </div>
+        <div class="stat">
+          <span class="stat-name"><i class="dot dot-clean"></i>清洁</span>
+          <b id="valClean">100</b>
+        </div>
+      </section>
+
+      <nav class="actions">
+        <button class="act" type="button" data-action="feed">
+          <span class="act-emoji">🍖</span>
+          <span class="act-label">喂食</span>
+        </button>
+        <button class="act" type="button" data-action="play">
+          <span class="act-emoji">🎾</span>
+          <span class="act-label">玩耍</span>
+        </button>
+        <button class="act" type="button" data-action="bath">
+          <span class="act-emoji">🫧</span>
+          <span class="act-label">洗澡</span>
+        </button>
+        <button class="act" type="button" data-action="sleep">
+          <span class="act-emoji" id="sleepEmoji">🌙</span>
+          <span class="act-label" id="sleepLabel">睡觉</span>
+        </button>
+      </nav>
+
+      <footer class="xp">
+        <span class="xp-level" id="badgeText">Lv.1 小豆</span>
+        <span class="xp-bar"><i id="xpBar"></i></span>
+      </footer>
+
+      <span class="gloss" aria-hidden="true"></span>
+    </div>
+  </div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
