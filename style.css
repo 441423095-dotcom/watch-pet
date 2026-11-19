@@ -203,9 +203,38 @@ body {
 }
 
 .date {
+  flex: 1;
+  margin-left: 8px;
   font-size: 11.5px;
   letter-spacing: 0.3px;
   color: var(--ink-soft);
+}
+
+.sound {
+  flex: none;
+  width: 24px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: none;
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.07);
+  color: var(--ink-dim);
+  font-family: inherit;
+  font-size: 10px;
+  line-height: 1;
+  cursor: pointer;
+  transition: transform 120ms ease, opacity 160ms ease;
+}
+
+.sound:active {
+  transform: scale(0.88);
+}
+
+.sound.muted {
+  opacity: 0.4;
 }
 
 .time {

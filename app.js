@@ -83,6 +83,11 @@
     /* 不支持时保持空实现 */
   });
 
+  // 音效：由 src/audio.js 现场合成，不需要任何音频文件
+  function sound(name) {
+    if (window.PetSound) window.PetSound.play(name);
+  }
+
   function clamp(n) {
     return Math.max(0, Math.min(100, n));
   }
@@ -321,6 +326,7 @@
       state.clean = clamp(state.clean - 3);
       addXp(6);
       playHaptic('feed');
+      sound('feed');
       burst('🍖', 5);
       playAnim('hop');
       say(pick(LINES.feed));
@@ -337,6 +343,7 @@
       state.hunger = clamp(state.hunger - 8);
       addXp(8);
       playHaptic('play');
+      sound('play');
       burst('✨', 6);
       playAnim('hop');
       say(pick(LINES.play));
@@ -346,6 +353,7 @@
       state.mood = clamp(state.mood + 6);
       addXp(6);
       playHaptic('bath');
+      sound('bath');
       burst('🫧', 6);
       playAnim('shake');
       say(pick(LINES.bath));
@@ -355,12 +363,14 @@
         state.asleep = false;
         addXp(2);
         playHaptic('poke');
+        sound('wake');
         burst('☀️', 3);
         say(pick(LINES.wake));
       } else {
         state.asleep = true;
         addXp(2);
         playHaptic('sleep');
+        sound('sleep');
         say(pick(LINES.sleep));
       }
     }
@@ -381,6 +391,7 @@
     fn();
     if (state.level > before) {
       playHaptic('levelup');
+      sound('levelup');
       say('升级啦！Lv.' + state.level + ' · ' + NAMES[Math.min(state.level - 1, NAMES.length - 1)]);
     }
     render();
@@ -414,6 +425,25 @@
     });
   }
 
+  // 声音开关：图标记住上次的选择，第一次点按钮时才会真正创建音频
+  var soundBtn = document.getElementById('soundToggle');
+  if (soundBtn) {
+    if (!window.PetSound) {
+      soundBtn.hidden = true;
+    } else {
+      var muted = window.PetSound.isMuted();
+      soundBtn.textContent = muted ? '🔇' : '🔊';
+      soundBtn.classList.toggle('muted', muted);
+      soundBtn.addEventListener('click', function () {
+        var next = !window.PetSound.isMuted();
+        window.PetSound.setMuted(next);
+        soundBtn.textContent = next ? '🔇' : '🔊';
+        soundBtn.classList.toggle('muted', next);
+        if (!next) window.PetSound.play('chirp');
+      });
+    }
+  }
+
   if (el.petWrap) {
     el.petWrap.addEventListener('click', function () {
       if (state.asleep) {
@@ -423,6 +453,7 @@
       state.mood = clamp(state.mood + 3);
       addXp(1);
       playHaptic('poke');
+      sound('poke');
       playAnim('hop');
       say(pick(LINES.poke));
       render();
