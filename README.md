@@ -33,29 +33,29 @@
 
 ## 分享
 
-仓库地址：<https://github.com/441423095-dotcom/watch-pet>
+### 现在就能发出去的链接
 
-### 网页托管
+<https://htmlpreview.github.io/?https://github.com/441423095-dotcom/watch-pet/blob/main/index.html>
 
-**现在就能发出去的地址**（不需要任何设置）：
-
-<https://raw.githack.com/441423095-dotcom/watch-pet/main/index.html>
-
-**永久地址**（等托管开好之后）：<https://441423095-dotcom.github.io/watch-pet/>
-
-仓库里带了 `.github/workflows/pages.yml`，托管一开，以后每次推送到 `main` 都会自动更新。开启这一步只能在网页上点，App 里没有这个权限：
-
-1. 打开 <https://github.com/441423095-dotcom/watch-pet/settings/pages>
-2. **Source** 选 `GitHub Actions`，点 **Save**
-3. 之后 Actions 会自己跑，绿色勾出现后永久地址就能打开了
+不用做任何设置，复制这条发出去，对方点开就是小宠（页面放在 GitHub 公开仓库里，由 htmlpreview 渲染）。
 
 ### 发到 iMessage
 
-1. 在 iPhone 的 Safari 里打开上面那个 `github.io` 网址，等小宠出现
+1. 在 iPhone 的 Safari 里打开上面那条链接，等小宠出现
 2. 点底部的**分享**按钮（方框加向上箭头）
 3. 选**信息**，挑联系人，发送
 
-想当成 App 用，就在分享菜单里选「添加到主屏幕」。
+想当成 App 用，就在分享菜单里选「添加到主屏幕」。进度按浏览器各自保存，换浏览器会重新养一只。
+
+### 永久网址（可选，一次性设置）
+
+<https://441423095-dotcom.github.io/watch-pet/>
+
+仓库里带了 `.github/workflows/pages.yml`，托管一开，以后每次推送到 `main` 都会自动更新。开启这一步只能在网页上点：
+
+1. 打开 <https://github.com/441423095-dotcom/watch-pet/settings/pages>
+2. **Source** 选 `GitHub Actions`，点 **Save**
+3. 等 Actions 跑出绿色勾，永久网址就能打开了
 
 ### 在手表上玩
 
