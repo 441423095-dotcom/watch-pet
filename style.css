@@ -195,11 +195,11 @@ body {
   position: relative;
   z-index: 2;
   flex: none;
-  height: 20px;
+  height: 26px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 6px;
+  padding: 0 4px;
 }
 
 .date {
@@ -212,18 +212,18 @@ body {
 
 .sound {
   flex: none;
-  width: 24px;
-  height: 18px;
+  width: 34px;
+  height: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 0;
-  border: none;
-  border-radius: 9px;
-  background: rgba(255, 255, 255, 0.07);
-  color: var(--ink-dim);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(247, 242, 233, 0.78);
   font-family: inherit;
-  font-size: 10px;
+  font-size: 13px;
   line-height: 1;
   cursor: pointer;
   transition: transform 120ms ease, opacity 160ms ease;

@@ -23,7 +23,7 @@
       try {
         ctx = new AC();
         master = ctx.createGain();
-        master.gain.value = 0.6;
+        master.gain.value = 0.9;
         master.connect(ctx.destination);
       } catch (e) {
         ctx = null;
