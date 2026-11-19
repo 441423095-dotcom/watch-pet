@@ -37,13 +37,17 @@
 
 ### 网页托管
 
-仓库里带了 `.github/workflows/pages.yml`，每次推送到 `main` 都会自动把页面部署到：
+**现在就能发出去的地址**（不需要任何设置）：
 
-<https://441423095-dotcom.github.io/watch-pet/>
+<https://raw.githack.com/441423095-dotcom/watch-pet/main/index.html>
 
-如果第一次部署报权限错误（`Resource not accessible by integration`），打开
-<https://github.com/441423095-dotcom/watch-pet/settings/pages>
-把 **Source** 选成 `GitHub Actions` 保存，再到 Actions 页面点一次 **Re-run jobs** 就好。
+**永久地址**（等托管开好之后）：<https://441423095-dotcom.github.io/watch-pet/>
+
+仓库里带了 `.github/workflows/pages.yml`，托管一开，以后每次推送到 `main` 都会自动更新。开启这一步只能在网页上点，App 里没有这个权限：
+
+1. 打开 <https://github.com/441423095-dotcom/watch-pet/settings/pages>
+2. **Source** 选 `GitHub Actions`，点 **Save**
+3. 之后 Actions 会自己跑，绿色勾出现后永久地址就能打开了
 
 ### 发到 iMessage
 
